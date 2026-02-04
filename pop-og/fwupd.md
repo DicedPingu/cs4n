@@ -1,0 +1,163 @@
+# fwupd Quicksheet
+Manage firmware updates.
+- `fwupdmgr refresh`
+  - What it does: Downloads the latest metadata from enabled remotes.
+  - When to use it: Before checking for updates or if metadata is stale.
+- `fwupdmgr get-devices`
+  - What it does: Lists devices that support firmware updates.
+  - When to use it: Identifying device IDs or GUIDs.
+- `fwupdmgr get-updates`
+  - What it does: Shows available firmware updates for all devices.
+  - When to use it: Checking what can be updated.
+- `fwupdmgr get-updates <DEVICE-ID|GUID>`
+  - What it does: Shows updates for a specific device.
+  - When to use it: Targeted troubleshooting or updates.
+- `fwupdmgr update`
+  - What it does: Installs the latest firmware updates for all devices.
+  - When to use it: Applying all available updates.
+- `fwupdmgr update <DEVICE-ID|GUID>`
+  - What it does: Updates a specific device to the latest firmware.
+  - When to use it: Targeted updates or troubleshooting.
+- `fwupdmgr check-reboot-needed`
+  - What it does: Reports whether any devices are pending a reboot.
+  - When to use it: After updates or in scripts.
+- `fwupdmgr get-history`
+  - What it does: Shows firmware update history.
+  - When to use it: Auditing or confirming past updates.
+
+## releases & versions
+- `fwupdmgr get-releases <DEVICE-ID|GUID>`
+  - What it does: Lists available firmware releases for a device.
+  - When to use it: Selecting a specific version to install.
+- `fwupdmgr downgrade <DEVICE-ID|GUID>`
+  - What it does: Downgrades a device firmware to an older release.
+  - When to use it: Rolling back a problematic update.
+- `fwupdmgr reinstall <DEVICE-ID|GUID>`
+  - What it does: Reinstalls the current firmware version.
+  - When to use it: Repairing a potentially corrupted install.
+- `fwupdmgr switch-branch <DEVICE-ID|GUID> <BRANCH>`
+  - What it does: Switches the firmware branch for a device.
+  - When to use it: Moving between stable/testing branches.
+
+## firmware files
+- `fwupdmgr get-details <FILE>`
+  - What it does: Shows metadata for a firmware file.
+  - When to use it: Inspecting a cabinet file before installing.
+- `fwupdmgr local-install <FILE>`
+  - What it does: Installs a local .cab firmware file on this hardware.
+  - When to use it: Offline installs or vendor-provided files.
+- `fwupdmgr local-install <FILE> <DEVICE-ID|GUID>`
+  - What it does: Installs a local firmware file to a specific device.
+  - When to use it: Targeting one device with a vendor file.
+- `fwupdmgr install <DEVICE-ID|GUID> <VERSION>`
+  - What it does: Installs a specific firmware version for a device.
+  - When to use it: Pinning to a known-good release.
+- `fwupdmgr verify <DEVICE-ID|GUID>`
+  - What it does: Verifies firmware cryptographic hashes.
+  - When to use it: Ensuring firmware matches expected data.
+- `fwupdmgr verify-update <DEVICE-ID|GUID>`
+  - What it does: Updates the stored cryptographic hash for a device.
+  - When to use it: After manual changes or known-good flashes.
+
+## remotes & metadata
+- `fwupdmgr get-remotes`
+  - What it does: Lists configured remotes.
+  - When to use it: Seeing where metadata comes from.
+- `fwupdmgr enable-remote <REMOTE-ID>`
+  - What it does: Enables a remote source.
+  - When to use it: Allowing updates from a trusted remote.
+- `fwupdmgr disable-remote <REMOTE-ID>`
+  - What it does: Disables a remote source.
+  - When to use it: Preventing updates from a source.
+- `fwupdmgr modify-remote <REMOTE-ID> <KEY> <VALUE>`
+  - What it does: Changes a remote setting.
+  - When to use it: Tweaking URLs, priorities, or attributes.
+- `fwupdmgr clean-remote <REMOTE-ID>`
+  - What it does: Clears cached metadata for a remote.
+  - When to use it: Resolving remote metadata issues.
+- `fwupdmgr refresh --force`
+  - What it does: Forces a full metadata refresh.
+  - When to use it: Fixing corrupt or stale metadata.
+- `fwupdmgr search <WORD>`
+  - What it does: Searches metadata for firmware releases.
+  - When to use it: Finding a device or vendor release.
+
+## security & reporting
+- `fwupdmgr security`
+  - What it does: Shows host security attributes.
+  - When to use it: Reviewing firmware-related security posture.
+- `fwupdmgr security-fix <APPSTREAM_ID>`
+  - What it does: Fixes a specific security attribute.
+  - When to use it: Applying recommended remediations.
+- `fwupdmgr security-undo <APPSTREAM_ID>`
+  - What it does: Reverts a security attribute fix.
+  - When to use it: Rolling back a remediation.
+- `fwupdmgr report-history`
+  - What it does: Uploads firmware update history to developers.
+  - When to use it: Sharing anonymized update info.
+- `fwupdmgr report-devices`
+  - What it does: Uploads the list of updatable devices.
+  - When to use it: Helping improve device support.
+- `fwupdmgr report-export`
+  - What it does: Exports history for manual upload.
+  - When to use it: When automatic reporting is disabled.
+
+## BIOS settings
+- `fwupdmgr get-bios-settings`
+  - What it does: Lists BIOS settings (if supported).
+  - When to use it: Reviewing current BIOS configuration.
+- `fwupdmgr get-bios-settings <SETTING>`
+  - What it does: Shows a specific BIOS setting.
+  - When to use it: Checking a single value.
+- `fwupdmgr set-bios-setting <SETTING> <VALUE>`
+  - What it does: Updates one or more BIOS settings.
+  - When to use it: Applying firmware-level configuration changes.
+
+## policy
+- `fwupdmgr get-approved-firmware`
+  - What it does: Lists approved firmware checksums.
+  - When to use it: Auditing an allowlist policy.
+- `fwupdmgr set-approved-firmware <FILE|CHECKSUMS>`
+  - What it does: Sets the approved firmware list.
+  - When to use it: Enforcing an allowlist of firmware.
+- `fwupdmgr get-blocked-firmware`
+  - What it does: Lists blocked firmware checksums.
+  - When to use it: Auditing a blocklist policy.
+- `fwupdmgr block-firmware <CHECKSUM>`
+  - What it does: Blocks a specific firmware from being installed.
+  - When to use it: Preventing a known-bad firmware.
+- `fwupdmgr unblock-firmware <CHECKSUM>`
+  - What it does: Removes a firmware block.
+  - When to use it: Allowing a previously blocked firmware.
+
+## troubleshooting & maintenance
+- `fwupdmgr get-results <DEVICE-ID|GUID>`
+  - What it does: Shows results from the last update on a device.
+  - When to use it: Diagnosing a failed update.
+- `fwupdmgr clear-results <DEVICE-ID|GUID>`
+  - What it does: Clears last update results for a device.
+  - When to use it: Resetting state after troubleshooting.
+- `fwupdmgr unlock <DEVICE-ID|GUID>`
+  - What it does: Unlocks a device for firmware access.
+  - When to use it: A device requires explicit unlock to update.
+- `fwupdmgr activate <DEVICE-ID|GUID>`
+  - What it does: Activates firmware on supported devices.
+  - When to use it: Completing staged updates without reboot.
+- `fwupdmgr device-wait <DEVICE-ID|GUID>`
+  - What it does: Waits for a device to appear.
+  - When to use it: Scripting updates on hot-plug devices.
+- `fwupdmgr get-plugins`
+  - What it does: Lists enabled fwupd plugins.
+  - When to use it: Diagnosing missing device support.
+- `fwupdmgr inhibit "reason" 600`
+  - What it does: Temporarily blocks upgrades for a time period.
+  - When to use it: Avoiding updates during critical work.
+- `fwupdmgr uninhibit <INHIBIT-ID>`
+  - What it does: Removes an upgrade block.
+  - When to use it: Restoring normal update behavior.
+- `fwupdmgr sync`
+  - What it does: Syncs firmware versions to the chosen configuration.
+  - When to use it: Enforcing policy-managed firmware versions.
+- `fwupdmgr --version`
+  - What it does: Shows client and daemon versions.
+  - When to use it: Debugging or support requests.
