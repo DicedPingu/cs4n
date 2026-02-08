@@ -1,7 +1,23 @@
-# htop — interactive process viewer
-# Use it to inspect CPU/RAM and manage processes.
+# htop - interactive process viewer
+# Use it for CPU/RAM inspection and process management from a live TUI.
 
-- `htop` — start UI
-- `htop -u user` — filter by user
-- `htop -p PID` — show specific PID
-- Keys: `F9` kill, `F6` sort, `F4` filter
+## Typical session
+- `htop` - open interactive dashboard.
+- `htop -u <user>` - focus one user's processes.
+- `htop -p <pid1,pid2>` - inspect selected process IDs.
+
+## High-value keys
+- `F3` - search process list.
+- `F4` - filter process list.
+- `F5` - tree view.
+- `F6` - change sort column.
+- `F9` - send signal/kill.
+
+## Fast alternatives
+- `top` - available almost everywhere (lower overhead).
+- `ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head` - scriptable snapshot.
+
+## Version and release line
+- Local check: `htop --version`
+- Upstream release snapshot: htop `3.4.1`.
+

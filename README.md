@@ -1,13 +1,22 @@
 # Guides
-Short, practical cheatsheets for daily workflows.
+Practical command guides with ordered workflows, safe defaults, and upgrade-aware notes.
 
-## Structure
-- `cli/` — git/gh/wget/rg/tmux and CLI workflows
-- `pkg/` — npm/uv/pub/pip and package managers
-- `dev/` — flutter, flutter-pub, cargo, python
-- `build/` — make, cmake
-- `system/` — docker, docker-compose
-- `linux/` — common Unix tools (grep, find, ssh, systemctl, etc.)
-- `pop-og/` — Pop!_OS specific notes
+## Layout
+- `cli/` - Git and terminal productivity tooling.
+- `pkg/` - package manager workflows (`npm`, `uv`, `pip`, `dart pub`).
+- `dev/` - language and framework flows (`python`, `flutter`, `cargo`).
+- `build/` - build systems (`make`, `cmake`).
+- `system/` - containers and compose orchestration.
+- `linux/` - daily Linux command references.
+- `codex/` - how to control Codex behavior and outputs.
 
-Tip: open a file and skim sections in order (setup → common flow → options).
+## How these files are structured
+- Header: one-line purpose + when to use it.
+- Main flow first: commands in the order most people actually run them.
+- Options nearby: flags are grouped next to the workflow they affect.
+- Safer alternatives: destructive patterns are paired with dry-run checks.
+- Version awareness: each moving tool includes a local version check and upstream release pointer.
+
+## Version snapshot date
+- Release references were refreshed on `2026-02-08`.
+

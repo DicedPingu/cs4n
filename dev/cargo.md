@@ -1,52 +1,36 @@
-# Cargo — Rust’s build system and package manager
-# Use it to build, test, and ship Rust crates and CLIs.
+# Cargo - Rust build system and package manager
+# Use it to build, test, lint, and publish Rust crates and applications.
 
-## 1) New project (ordered)
-- `cargo new myapp` — new binary crate
-- `cargo new --lib mylib` — new library crate
-- `cd myapp`
-- `cargo run` — build + run
+## Standard development loop
+- `cargo check` - fast type and borrow checks.
+- `cargo test` - run tests.
+- `cargo clippy --all-targets --all-features -- -D warnings` - strict linting.
+- `cargo fmt --check` - formatting gate.
+- `cargo run` - run current binary target.
 
-## 2) Build / test / run
-- `cargo build` — debug build
-- `cargo build --release` — optimized build
-- `cargo run` — run binary
-- `cargo test` — run tests
-- `cargo check` — fast type‑check only
+## Dependency and feature management
+- `cargo add <crate>` - add dependency (via cargo-edit).
+- `cargo add <crate> --features "feat1,feat2"` - enable crate features.
+- `cargo update -p <crate>` - upgrade one lockfile dependency.
+- `cargo tree -i <crate>` - reverse dependency tree.
 
-## 3) Add / update deps
-- `cargo add <crate>` — add dependency (needs cargo‑edit)
-- `cargo add <crate> --features "feat1,feat2"` — enable features
-- `cargo update` — update Cargo.lock
-- `cargo update -p <crate>` — update one crate
+## Build profiles and artifacts
+- `cargo build` - debug build.
+- `cargo build --release` - optimized release build.
+- `cargo doc --no-deps --open` - build local docs.
+- `cargo bench` - benchmark target run.
 
-## 4) Useful built‑ins
-- `cargo fmt` — format (rustfmt)
-- `cargo clippy` — lint (clippy)
-- `cargo doc --open` — build + open docs
-- `cargo bench` — benchmarks
+## Publish and workspace hygiene
+- `cargo package --allow-dirty` - inspect package archive before publish.
+- `cargo publish --dry-run` - registry validation pass.
+- `cargo publish` - push crate to crates.io.
 
-## 5) Popular crates (what for)
-- `serde` — serialization / deserialization
-- `serde_json` — JSON support for serde
-- `tokio` — async runtime
-- `anyhow` — error handling (apps)
-- `thiserror` — error enums (libs)
-- `clap` — CLI arg parsing
-- `reqwest` — HTTP client
-- `tracing` + `tracing-subscriber` — structured logging
-- `rayon` — data‑parallelism
-- `parking_lot` — fast locks
-- `dashmap` — concurrent hash map
-- `sqlx` — async SQL
+## Common companion tools
+- `cargo install cargo-nextest` - faster test execution.
+- `cargo install cargo-audit` - security advisory scanning.
+- `cargo install cargo-deny` - policy checks (licenses/advisories).
 
-## 6) Cargo tools (install once)
-- `cargo install cargo-edit` — enables `cargo add/rm/upgrade`
-- `cargo install cargo-watch` — auto rebuild on change
-- `cargo install cargo-nextest` — faster test runner
-- `cargo install cargo-audit` — security advisory scan
-- `cargo install cargo-deny` — licenses + bans
-- `cargo install cargo-expand` — macro expansion view
-- `cargo install cargo-udeps` — find unused deps
-- `cargo install cargo-bloat` — binary size analysis
-- `cargo install flamegraph` — CPU profiling
+## Version and release line
+- Local check: `cargo --version && rustc --version`
+- Stable release snapshot: Rust/Cargo `1.93.0` toolchain line.
+

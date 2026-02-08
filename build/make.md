@@ -1,33 +1,29 @@
-# Make — build automation for C/C++ and more
-# Use it to build, test, install, and clean projects from a Makefile.
+# Make - build automation from Makefiles
+# Use it for deterministic build/test/install targets in C/C++ and mixed projects.
 
-## 1) Build / update (ordered)
-- `make` — build default target (usually `all`)
-- `make -j$(nproc)` — parallel build (fast)
-- `sudo make install` — install artifacts system‑wide
-- `make install PREFIX=$HOME/.local` — install to user dir
+## Common project loop
+- `make -j$(nproc)` - parallel default target build.
+- `make test` - run tests if target exists.
+- `make install PREFIX=$HOME/.local` - user-space install.
+- `make clean` - clear generated outputs.
 
-## 2) Common targets (when defined)
-- `make all` — full build
-- `make test` — run tests
-- `make check` — run checks (often same as test)
-- `make bench` — benchmarks
-- `make clean` — remove build outputs
-- `make distclean` — deeper clean (removes config)
-- `make uninstall` — remove installed files
-- `make help` — list targets (if provided)
+## Useful control flags
+- `make -n` - dry run (show commands without executing).
+- `make -k` - keep going after errors.
+- `make V=1` - verbose toolchain output (if Makefile supports it).
+- `make -C <dir>` - run using another working directory.
 
-## 3) Useful options
-- `make -n` — dry run (print commands)
-- `make -k` — keep going after errors
-- `make -C <dir>` — run in another directory
-- `make -f <file>` — use a specific Makefile
-- `make V=1` — verbose (if supported)
+## Variable override examples
+- `make CC=clang CXX=clang++` - switch compiler.
+- `make CFLAGS='-O2 -g'` - C flags.
+- `make CXXFLAGS='-O2 -g'` - C++ flags.
+- `make DESTDIR=/tmp/pkg install` - staging install root for packaging.
 
-## 4) Override variables (common patterns)
-- `make CC=clang` — use clang
-- `make CXX=clang++` — use clang++
-- `make CFLAGS="-O2 -g"` — compiler flags
-- `make CXXFLAGS="-O2 -g"` — C++ flags
-- `make LDFLAGS="-Wl,-rpath,$HOME/.local/lib"` — linker flags
-- `make DESTDIR=/tmp/pkg install` — staging install
+## Target discovery
+- `make help` - project help target (if present).
+- `make -qp | rg '^[a-zA-Z0-9_.-]+:'` - inspect parsed targets quickly.
+
+## Version and release line
+- Local check: `make --version`
+- Upstream release snapshot: GNU Make `4.4.1`.
+

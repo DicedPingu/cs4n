@@ -1,22 +1,28 @@
-# CMake — cross‑platform build generator
-# Use it to configure and build C/C++ projects.
+# CMake - cross-platform build generator
+# Use it to configure, build, test, and install C/C++ projects in a reproducible way.
 
-## 1) Configure / build (recommended)
-- `cmake -S . -B build` — configure into build/ dir
-- `cmake --build build -j$(nproc)` — build
-- `cmake --install build` — install (if defined)
+## Recommended out-of-source workflow
+- `cmake -S . -B build -G Ninja` - configure with Ninja generator.
+- `cmake --build build -j$(nproc)` - parallel build.
+- `ctest --test-dir build --output-on-failure` - run tests.
+- `cmake --install build` - install artifacts.
 
-## 2) Common options
-- `-DCMAKE_BUILD_TYPE=Release` — optimized build
-- `-DCMAKE_PREFIX_PATH=...` — find custom deps
-- `-G Ninja` — use Ninja generator
-- `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON` — clangd support
-- `-DCMAKE_INSTALL_PREFIX=$HOME/.local` — user install
+## Common configure options
+- `-DCMAKE_BUILD_TYPE=Debug|Release|RelWithDebInfo` - build profile.
+- `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON` - enable `compile_commands.json` for clangd.
+- `-DCMAKE_INSTALL_PREFIX=$HOME/.local` - user-space install.
+- `-DCMAKE_PREFIX_PATH=/path/to/deps` - locate external dependencies.
 
-## 3) Targets / introspection
-- `cmake --build build --target <name>` — build target
-- `cmake -LAH -S . -B build` — show cache values
-- `ctest --test-dir build` — run tests (if configured)
+## Targeted builds and diagnostics
+- `cmake --build build --target <name>` - build one target.
+- `cmake -LAH -S . -B build` - inspect cached variables.
+- `cmake --fresh -S . -B build` - reconfigure from clean cache.
 
-## 4) Cleanup
-- `rm -rf build` — full clean
+## Cleanup strategy
+- `cmake --build build --target clean` - project-defined clean.
+- `rm -rf build` - full reset when cache is inconsistent.
+
+## Version and release line
+- Local check: `cmake --version`
+- Upstream release snapshot: CMake `v4.2.3`.
+

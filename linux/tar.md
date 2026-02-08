@@ -1,8 +1,22 @@
-# tar — archive files
-# Use it to create and extract tarballs.
+# tar - create and extract archives
+# Use it to package directories for transfer, backup, or release artifacts.
 
-- `tar -czf out.tgz dir/` — create .tgz
-- `tar -xzf out.tgz` — extract .tgz
-- `tar -tf out.tgz` — list contents
-- `tar -C /dest -xzf out.tgz` — extract to dir
-- `tar --exclude '*.log' -czf out.tgz dir/` — exclude files
+## Common archive flows
+- `tar -czf out.tgz dir/` - create gzip-compressed tarball.
+- `tar -xzf out.tgz` - extract gzip tarball.
+- `tar -tf out.tgz` - list contents before extracting.
+- `tar -C /dest -xzf out.tgz` - extract into specific directory.
+
+## Precision options
+- `tar --exclude='*.log' -czf out.tgz dir/` - exclude patterns.
+- `tar -xzf out.tgz path/in/archive` - extract a single path.
+- `tar --strip-components=1 -xzf out.tgz` - drop top directory during extraction.
+
+## Compression variants
+- `tar -cJf out.txz dir/` - xz compression (smaller, slower).
+- `tar -cjf out.tbz2 dir/` - bzip2 compression.
+
+## Version and release line
+- Local check: `tar --version`
+- Upstream release snapshot: GNU tar `1.35`.
+

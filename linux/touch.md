@@ -1,6 +1,16 @@
-# touch — create files / update timestamps
-# Use it to create empty files or update mtime.
+# touch - create empty files or change timestamps
+# Use it to initialize files and manipulate mtime/atime in scripts.
 
-- `touch file` — create empty file
-- `touch -c file` — no create
-- `touch -t 202602041200 file` — set timestamp
+## Common usage
+- `touch file` - create file if missing, otherwise update timestamp.
+- `touch -c file` - update only if file exists.
+- `touch file1 file2 file3` - batch update.
+
+## Timestamp control
+- `touch -t 202602081230 file` - set explicit timestamp (`YYYYMMDDhhmm`).
+- `touch -r reference.file target.file` - copy timestamp from another file.
+
+## Version and release line
+- Local check: `touch --version`
+- Upstream release snapshot: GNU coreutils `9.10`.
+

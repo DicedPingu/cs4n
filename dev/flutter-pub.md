@@ -1,20 +1,28 @@
-# Flutter Pub — Flutter dependency manager
-# Use it to add, update, and inspect Flutter deps.
+# Flutter Pub - Flutter dependency workflow
+# Use it to manage package dependencies in Flutter app/plugin projects.
 
-## Add / remove
-- `flutter pub add <pkg>` — add dep
-- `flutter pub add dev:<pkg>` — add dev dep
-- `flutter pub remove <pkg>` — remove dep
+## Daily dependency operations
+- `flutter pub get` - resolve and install dependencies.
+- `flutter pub add <pkg>` - add runtime package.
+- `flutter pub add dev:<pkg>` - add development package.
+- `flutter pub remove <pkg>` - remove dependency.
 
-## Install / update
-- `flutter pub get` — install deps
-- `flutter pub upgrade` — update within constraints
-- `flutter pub upgrade --major-versions` — allow breaking upgrades
-- `flutter pub downgrade` — lowest versions
+## Upgrade strategy
+- `flutter pub outdated` - compare constraints to latest releases.
+- `flutter pub upgrade` - upgrade within declared ranges.
+- `flutter pub upgrade --major-versions` - rewrite constraints to newer majors.
+- `flutter pub downgrade` - validate minimum supported versions.
 
-## Inspect
-- `flutter pub outdated` — list newer versions
-- `flutter pub deps` — dependency tree
+## Build hygiene around dependency updates
+- `flutter clean && flutter pub get` - reset artifact drift.
+- `flutter analyze` - static checks after upgrades.
+- `flutter test` - regression check.
 
-## Cache
-- `flutter pub cache repair` — fix cache
+## Cache and network recovery
+- `flutter pub cache repair` - rebuild pub cache.
+- `flutter pub cache clean` - clear stale cache entries.
+
+## Version and release line
+- Local check: `flutter --version && dart --version`
+- Stable snapshot lines: Flutter `3.38.9`, Dart `3.10.9`.
+

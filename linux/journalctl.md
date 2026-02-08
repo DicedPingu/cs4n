@@ -1,9 +1,24 @@
-# journalctl — systemd logs
-# Use it to read and filter system logs.
+# journalctl - systemd journal query tool
+# Use it to inspect service logs by unit, boot, severity, and time window.
 
-- `journalctl -u <service>` — logs for a service
-- `journalctl -f` — follow logs
-- `journalctl -xe` — recent errors with context
-- `journalctl --since "1 hour ago"` — time range
-- `journalctl -b` — current boot
-- `journalctl -b -1` — previous boot
+## Most common filters
+- `journalctl -u <service>` - logs for one unit.
+- `journalctl -u <service> -f` - follow live service logs.
+- `journalctl -b` - logs from current boot.
+- `journalctl -b -1` - logs from previous boot.
+
+## Time and severity slicing
+- `journalctl --since "1 hour ago"` - recent history.
+- `journalctl --since "2026-02-08 10:00" --until "2026-02-08 11:00"` - exact interval.
+- `journalctl -p err..alert` - error and higher severity.
+- `journalctl -xeu <service>` - errors with explanatory context.
+
+## Export and machine-friendly output
+- `journalctl -u <service> -n 200 > service.log` - export subset.
+- `journalctl -u <service> -o short-iso` - stable timestamp format.
+- `journalctl -u <service> -o json-pretty` - structured output.
+
+## Version and release line
+- Local check: `journalctl --version`
+- Upstream release snapshot: systemd `259.1`.
+

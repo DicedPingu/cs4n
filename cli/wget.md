@@ -1,25 +1,28 @@
-# wget — download files and websites
-# Use it for scripted downloads and mirrors.
+# wget - non-interactive downloader
+# Use it for resilient scripted downloads and recursive site fetches.
 
-## Basic
-- `wget <url>` — download to current folder
-- `wget -O <file> <url>` — save as specific filename
-- `wget -P <dir> <url>` — download into a directory
-- `wget -c <url>` — resume partial download
+## Core download patterns
+- `wget <url>` - download to current directory.
+- `wget -O artifact.tar.gz <url>` - custom output filename.
+- `wget -P downloads/ <url>` - write into target directory.
+- `wget -c <url>` - continue partial download.
 
-## Mirrors / sites
-- `wget -r <url>` — recursive download
-- `wget -r -np <url>` — no parent directories
-- `wget --mirror <url>` — mirror (recursive + timestamp)
-- `wget --convert-links -r <url>` — fix links for local viewing
+## Reliability and throttling
+- `wget --tries=5 --timeout=15 <url>` - retry envelope.
+- `wget --waitretry=2 --retry-connrefused <url>` - better transient failure handling.
+- `wget --limit-rate=1m <url>` - bandwidth cap.
+- `wget --show-progress <url>` - readable progress.
 
-## Auth / headers
-- `wget --user <u> --password <p> <url>` — basic auth
-- `wget --header="Authorization: Bearer ..." <url>` — custom header
-- `wget --user-agent="UA" <url>` — custom UA
+## Auth and request customization
+- `wget --header="Authorization: Bearer $TOKEN" <url>` - token auth.
+- `wget --user <user> --password <pass> <url>` - basic auth.
+- `wget --user-agent="my-agent/1.0" <url>` - custom user agent.
 
-## Control
-- `wget -q <url>` — quiet
-- `wget --show-progress <url>` — progress bar
-- `wget --limit-rate=1m <url>` — throttle
-- `wget --timeout=10 --tries=3 <url>` — retry behavior
+## Recursive/site fetch use-cases
+- `wget -r -np <url>` - recursive download without parent traversal.
+- `wget --mirror --convert-links --adjust-extension <url>` - local static mirror.
+
+## Version and release line
+- Local check: `wget --version`
+- Upstream release snapshot: GNU Wget `1.25.0`.
+

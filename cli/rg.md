@@ -1,16 +1,29 @@
-# rg (ripgrep) — fast recursive search
-# Use it to search codebases quickly.
+# rg (ripgrep) - fast recursive code search
+# Use it as your default text search tool in repositories.
 
-## Basics
-- `rg "term"` — search in current dir
-- `rg "term" path/` — search in a path
-- `rg -n "term"` — show line numbers
+## High-signal basics
+- `rg "term"` - recursive search in current directory.
+- `rg -n "term" path/` - include line numbers in selected path.
+- `rg -i "term"` - case-insensitive.
+- `rg -F "literal.string"` - literal matching, no regex parsing.
 
-## Useful options
-- `rg -i "term"` — case‑insensitive
-- `rg -g "*.rs" "term"` — include glob
-- `rg -g "!*.lock" "term"` — exclude glob
-- `rg --hidden "term"` — include hidden files
-- `rg -uu "term"` — include ignored + hidden
-- `rg -F "literal"` — literal (no regex)
-- `rg -C 3 "term"` — context lines
+## File scope control
+- `rg -g "*.py" "term"` - include only matching globs.
+- `rg -g "!*.lock" "term"` - exclude lock files.
+- `rg --hidden "term"` - include hidden files.
+- `rg -uu "term"` - include ignored + hidden files.
+
+## Output shaping for workflows
+- `rg -l "TODO"` - filenames only.
+- `rg -C 2 "panic"` - include context.
+- `rg --json "term"` - machine-readable output.
+- `rg "term" | fzf` - interactive narrowing.
+
+## When grep is still useful
+- Use `grep` for POSIX-only environments where `rg` is not installed.
+- Use `rg` locally for speed and better ignore-file behavior.
+
+## Version and release line
+- Local check: `rg --version`
+- Upstream release snapshot: ripgrep `15.1.0`.
+

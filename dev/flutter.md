@@ -1,43 +1,36 @@
-# Flutter — UI toolkit for mobile, desktop, and web
-# Use it to build and ship cross‑platform apps.
+# Flutter - cross-platform UI SDK
+# Use it to build mobile, web, and desktop applications from one Dart codebase.
 
-## 1) Setup / health
-- `flutter --version` — SDK version
-- `flutter doctor -v` — environment check
-- `flutter upgrade` — update SDK
+## Environment readiness
+- `flutter --version` - SDK and channel info.
+- `flutter doctor -v` - full environment diagnostics.
+- `flutter config --list` - platform/tooling settings.
 
-## 2) New project (ordered)
-- `flutter create <app>` — create app
-- `flutter create --platforms=android,web <app>` — limit platforms
-- `cd <app>`
-- `flutter pub get` — fetch deps
-- `flutter run` — run app
+## New app workflow
+- `flutter create my_app` - scaffold app.
+- `cd my_app`
+- `flutter pub get` - dependency resolution.
+- `flutter run -d <device-id>` - launch app.
 
-## 3) Run & debug
-- `flutter run -d <id>` — run on device
-- `flutter run --profile` — perf profiling
-- `flutter run --release` — release build on device
-- `flutter run --dart-define=KEY=VALUE` — build‑time config
-- `flutter attach` — attach to running app
-- `flutter logs` — device logs
+## Build targets
+- `flutter build apk --release` - Android APK.
+- `flutter build appbundle --release` - Play Store bundle.
+- `flutter build ios --release` - iOS artifact generation.
+- `flutter build web --release` - optimized web bundle.
+- `flutter build linux|windows|macos --release` - desktop binaries.
 
-## 4) Build
-- `flutter build apk` — Android APK
-- `flutter build apk --split-per-abi` — smaller APKs
-- `flutter build appbundle` — Android AAB
-- `flutter build ios` — iOS build
-- `flutter build web` — web build
-- `flutter build linux|macos|windows` — desktop builds
+## Debug and performance flow
+- `flutter run --profile` - profile mode for perf work.
+- `flutter logs` - device/app logs.
+- `flutter attach` - attach to running app process.
+- `flutter symbolize -i stack.txt -d symbols/` - decode crash symbols.
 
-## 5) Test / analyze
-- `flutter analyze` — static analysis
-- `flutter test` — tests
+## Quality gates
+- `flutter analyze` - static analysis.
+- `flutter test` - unit/widget tests.
+- `flutter test integration_test` - integration tests.
 
-## 6) Devices / emulators
-- `flutter devices` — connected devices
-- `flutter emulators` — available emulators
-- `flutter emulators --launch <id>` — start emulator
+## Version and release line
+- Local check: `flutter --version`
+- Stable release snapshot: Flutter `3.38.9` (2026-02-08 snapshot).
 
-## 7) Cleanup / cache
-- `flutter clean` — remove build outputs
-- `flutter precache` — download artifacts

@@ -1,16 +1,27 @@
-# Python — common project workflow
-# Use this for virtual envs, packaging, and scripts.
+# Python - project workflow basics
+# Use it for environment setup, dependency install, testing, and packaging.
 
-## Envs (venv)
-- `python -m venv .venv` — create env
-- `source .venv/bin/activate` — activate (Linux/macOS)
-- `deactivate` — exit env
+## Fast start for a project
+- `python -m venv .venv` - create virtual environment.
+- `source .venv/bin/activate` - activate on Linux/macOS.
+- `python -m pip install -U pip` - update installer.
+- `python -m pip install -r requirements.txt` - install dependencies.
 
-## Packaging
-- `python -m build` — build sdist/wheel
-- `python -m pip install -e .` — editable install
-- `python -m pip install -r requirements.txt` — install deps
+## Day-to-day development
+- `python -m pytest -q` - run test suite.
+- `python -m pip check` - dependency integrity check.
+- `python -m pip list --outdated` - identify upgrade candidates.
 
-## Run
-- `python -m pytest` — tests
-- `python -m pip check` — verify deps
+## Packaging and distribution
+- `python -m build` - create sdist and wheel.
+- `python -m pip install -e .` - editable local install.
+- `python -m twine check dist/*` - package metadata validation.
+
+## Alternative toolchains
+- Use `uv` for faster lock/sync workflows.
+- Use `pipx` for isolated CLI tool installs.
+
+## Version guidance
+- Local check: `python --version`
+- Prefer currently supported Python branches and align team projects on one minor version.
+
