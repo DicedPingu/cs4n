@@ -22,3 +22,13 @@ Paste or adapt these into root `AGENTS.md` for always-on behavior.
 - Keep commits focused by concern.
 - Use ASCII unless file already requires Unicode.
 
+## Multi-device Git rules (Pop!_OS, Android, AI)
+- Sync first on every device: `git fetch origin --prune` then `git pull --rebase`.
+- Commit and push before switching devices.
+- Keep separate SSH keys per device and rotate compromised keys immediately.
+
+## AI branch rules (Codex, Code Insiders++)
+- Run AI edits only on dedicated branches (`ai/<tool>/<topic>`).
+- Require clean working tree before AI edits unless explicitly doing refactors.
+- Open draft PRs early for AI-generated changes and review diffs before merge.
+
