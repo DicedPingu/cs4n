@@ -3,7 +3,7 @@ Practical command guides with ordered workflows, safe defaults, and upgrade-awar
 
 ## Layout
 - `cli/` - GitHub workflow (`git` + `gh`) including Pop!_OS/Android/AI patterns, plus terminal productivity tooling.
-- `cli/github.md` - canonical GitHub guide; `cli/git.md` and `cli/gh.md` are compatibility redirects.
+- `cli/github.md` - canonical Git + GitHub CLI workflow.
 - `pkg/` - package manager workflows (`npm`, `uv`, `pip`, `dart pub`).
 - `dev/` - language and framework flows (`python`, `flutter`, `cargo`).
 - `build/` - build systems (`make`, `cmake`).

@@ -1,5 +1,15 @@
 # github (git + gh) - cross-device GitHub workflow
 # Use it to work from Pop!_OS, Android, and AI-assisted environments without breaking history.
+# Canonical Git/GitHub CLI guide for this repo.
+
+## 0) Fast terminal workflow (no IDE dependency)
+- `gh repo clone OWNER/REPO && cd REPO`
+- `git switch main && git pull --rebase --autostash`
+- `git switch -c feature/<topic>`
+- Edit files with terminal/editor of choice.
+- `git add -p && git commit -m "feat: concise summary"`
+- `git push -u origin feature/<topic>`
+- `gh pr create --draft --fill`
 
 ## 1) Core strategy (works from every device)
 - Keep `origin/main` as the source of truth.
