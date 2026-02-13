@@ -1,5 +1,11 @@
 # find - recursive file search and action runner
-# Use it to locate files by name/type/time and perform batch actions safely.
+Use it to locate files by name/type/time and perform batch actions safely.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## High-value searches
 - `find . -type f -name "*.log"` - find log files.

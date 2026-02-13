@@ -1,5 +1,11 @@
 # Flutter - cross-platform UI SDK
-# Use it to build mobile, web, and desktop applications from one Dart codebase.
+Use it to build mobile, web, and desktop applications from one Dart codebase.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Environment readiness
 - `flutter --version` - SDK and channel info.

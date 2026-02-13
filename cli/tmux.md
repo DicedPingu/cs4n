@@ -1,5 +1,11 @@
 # tmux - terminal multiplexer
-# Use it to keep shells alive across disconnects and organize parallel terminal work.
+Use it to keep shells alive across disconnects and organize parallel terminal work.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Session lifecycle
 - `tmux new -s work` - create named session.

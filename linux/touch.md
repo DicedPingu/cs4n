@@ -1,5 +1,11 @@
 # touch - create empty files or change timestamps
-# Use it to initialize files and manipulate mtime/atime in scripts.
+Use it to initialize files and manipulate mtime/atime in scripts.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Common usage
 - `touch file` - create file if missing, otherwise update timestamp.

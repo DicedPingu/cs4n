@@ -1,5 +1,11 @@
 # Cargo - Rust build system and package manager
-# Use it to build, test, lint, and publish Rust crates and applications.
+Use it to build, test, lint, and publish Rust crates and applications.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Standard development loop
 - `cargo check` - fast type and borrow checks.

@@ -1,5 +1,11 @@
 # mv - move or rename files
-# Use it to rename paths and relocate files/directories.
+Use it to rename paths and relocate files/directories.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Common operations
 - `mv old new` - rename file or directory.

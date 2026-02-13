@@ -1,5 +1,11 @@
 # uv - fast Python package manager and environment tool
-# Use it for reproducible Python projects, lockfiles, and tool execution.
+Use it for reproducible Python projects, lockfiles, and tool execution.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## New project (recommended order)
 - `uv init` - create `pyproject.toml`.

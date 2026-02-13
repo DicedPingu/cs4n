@@ -1,5 +1,11 @@
 # Make - build automation from Makefiles
-# Use it for deterministic build/test/install targets in C/C++ and mixed projects.
+Use it for deterministic build/test/install targets in C/C++ and mixed projects.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Common project loop
 - `make -j$(nproc)` - parallel default target build.

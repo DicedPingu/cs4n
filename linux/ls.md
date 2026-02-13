@@ -1,5 +1,11 @@
 # ls - list directory contents
-# Use it to inspect files quickly with the amount of detail you need.
+Use it to inspect files quickly with the amount of detail you need.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Daily listing patterns
 - `ls` - names only.

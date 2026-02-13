@@ -1,5 +1,11 @@
 # rsync - incremental file synchronization
-# Use it for fast local or remote copies, backups, and mirrors.
+Use it for fast local or remote copies, backups, and mirrors.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Primary workflows
 - `rsync -av src/ dest/` - archive copy preserving metadata.

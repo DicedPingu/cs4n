@@ -1,5 +1,11 @@
 # Flutter Pub - Flutter dependency workflow
-# Use it to manage package dependencies in Flutter app/plugin projects.
+Use it to manage package dependencies in Flutter app/plugin projects.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Daily dependency operations
 - `flutter pub get` - resolve and install dependencies.

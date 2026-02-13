@@ -1,5 +1,11 @@
 # chmod / chown - permissions and ownership
-# Use them to control who can read, write, or execute files and directories.
+Use them to control who can read, write, or execute files and directories.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Permission model quick map
 - `r` read, `w` write, `x` execute.

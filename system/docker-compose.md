@@ -1,5 +1,11 @@
 # Docker Compose - multi-container application orchestration
-# Use it to define app stacks (db, api, cache, workers) in one declarative file.
+Use it to define app stacks (db, api, cache, workers) in one declarative file.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Daily stack control
 - `docker compose up -d` - start services in background.

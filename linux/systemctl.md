@@ -1,5 +1,11 @@
 # systemctl - control systemd services and units
-# Use it to manage service lifecycle, startup behavior, and unit state.
+Use it to manage service lifecycle, startup behavior, and unit state.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Daily service control
 - `systemctl status <service>` - current state and recent logs.

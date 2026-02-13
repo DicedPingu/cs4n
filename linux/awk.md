@@ -1,5 +1,11 @@
 # awk - field-oriented text processing
-# Use it to extract columns, filter rows, and aggregate values from structured text.
+Use it to extract columns, filter rows, and aggregate values from structured text.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Daily patterns
 - `awk '{print $1}' file` - print first column.

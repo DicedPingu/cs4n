@@ -1,5 +1,11 @@
 # tar - create and extract archives
-# Use it to package directories for transfer, backup, or release artifacts.
+Use it to package directories for transfer, backup, or release artifacts.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Common archive flows
 - `tar -czf out.tgz dir/` - create gzip-compressed tarball.

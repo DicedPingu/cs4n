@@ -1,5 +1,11 @@
 # cat - print and concatenate files
-# Use it for fast inspection or joining small text files.
+Use it for fast inspection or joining small text files.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Most common uses
 - `cat file` - print file to stdout.

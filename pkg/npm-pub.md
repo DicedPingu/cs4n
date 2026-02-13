@@ -1,31 +1,34 @@
-# Dart Pub - Dart package manager
-# Use it in pure Dart projects (or from Flutter tooling when you need raw Dart commands).
+# npm publish - package release workflow
+Use it when releasing JavaScript/TypeScript packages to npm safely.
 
-## Typical project loop
-- `dart pub get` - resolve/install dependencies.
-- `dart pub add <pkg>` - add runtime dependency.
-- `dart pub add dev:<pkg>` - add dev dependency.
-- `dart pub remove <pkg>` - remove dependency.
-- `dart pub deps` - inspect resolved graph.
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
-## Upgrades with control
-- `dart pub outdated` - compare constraints vs latest releases.
-- `dart pub upgrade` - upgrade within current constraints.
-- `dart pub upgrade --major-versions` - rewrite constraints to newer majors.
-- `dart pub downgrade` - test lowest compatible versions.
+## Pre-publish validation (required)
+- `npm ci` - clean lockfile install.
+- `npm test` - run tests before release.
+- `npm run build` - create publishable build artifacts.
+- `npm pack --dry-run` - preview exactly what will be published.
 
-## Package publishing checklist
-- `dart analyze` - static analysis must be clean.
-- `dart test` - verify behavior before publish.
-- `dart pub publish --dry-run` - validate package metadata and contents.
-- `dart pub publish` - publish to pub.dev.
+## Versioning and tags
+- `npm version patch|minor|major` - bump version and create git tag.
+- `npm version prerelease --preid rc` - create release candidate versions.
+- `git push --follow-tags` - push commits and version tags together.
 
-## Useful options
-- `--directory <path>` - run pub commands for a different project root.
-- `--offline` - avoid network resolution when cache is present.
+## Publish commands
+- `npm publish` - publish to npm using package visibility defaults.
+- `npm publish --access public` - required first publish for scoped public packages.
+- `npm publish --tag next` - publish to a non-default dist-tag (e.g., pre-release channel).
+
+## Post-publish checks and rollback strategy
+- `npm view <pkg> dist-tags versions --json` - verify published version and tags.
+- `npm deprecate <pkg>@<range> "message"` - mark bad versions with migration guidance.
+- `npm unpublish <pkg>@<version>` - remove version (only if npm policy/time window allows).
 
 ## Version and release line
-- Local check: `dart --version`
-- Stable line snapshot: Dart `3.10.9` (released 2026-02-03).
-- Track official archive: `dart-archive/channels/stable/release/latest/VERSION`.
-
+- Local check: `npm --version && node --version`
+- Snapshot line: npm `11.9.0`, Node LTS `24.13.0`.
+- Upstream source: `npm/cli` latest release and Node release index.

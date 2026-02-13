@@ -1,5 +1,11 @@
 # Dart Pub - Dart package manager
-# Use it in pure Dart projects (or from Flutter tooling when you need raw Dart commands).
+Use it in pure Dart projects (or from Flutter tooling when you need raw Dart commands).
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Typical project loop
 - `dart pub get` - resolve/install dependencies.

@@ -1,5 +1,11 @@
 # grep - pattern search in text
-# Use it for fast filtering in files, logs, and pipelines.
+Use it for fast filtering in files, logs, and pipelines.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Core usage
 - `grep "term" file` - basic search.

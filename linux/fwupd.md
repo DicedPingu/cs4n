@@ -1,5 +1,11 @@
 # fwupd - Linux firmware update tooling
-# Use it to discover devices, refresh metadata, and apply firmware updates.
+Use it to discover devices, refresh metadata, and apply firmware updates.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Recommended update flow
 - `fwupdmgr get-devices` - list updatable hardware.

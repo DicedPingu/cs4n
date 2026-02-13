@@ -1,5 +1,11 @@
 # sed - stream editor for text transforms
-# Use it for line filtering and in-place replacements.
+Use it for line filtering and in-place replacements.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Fast patterns
 - `sed -n '1,20p' file` - print line range.

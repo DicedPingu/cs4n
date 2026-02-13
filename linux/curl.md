@@ -1,5 +1,11 @@
 # curl - HTTP client for APIs and transfers
-# Use it for API calls, diagnostics, uploads, and scripted downloads.
+Use it for API calls, diagnostics, uploads, and scripted downloads.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Core request patterns
 - `curl -L https://example.com` - GET and follow redirects.

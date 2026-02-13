@@ -1,5 +1,11 @@
 # mkdir - create directories
-# Use it to make project and data directories safely in scripts and shells.
+Use it to make project and data directories safely in scripts and shells.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Most common patterns
 - `mkdir project` - create one directory.

@@ -1,5 +1,11 @@
 # CMake - cross-platform build generator
-# Use it to configure, build, test, and install C/C++ projects in a reproducible way.
+Use it to configure, build, test, and install C/C++ projects in a reproducible way.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Recommended out-of-source workflow
 - `cmake -S . -B build -G Ninja` - configure with Ninja generator.

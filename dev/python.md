@@ -1,5 +1,11 @@
 # Python - project workflow basics
-# Use it for environment setup, dependency install, testing, and packaging.
+Use it for environment setup, dependency install, testing, and packaging.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Fast start for a project
 - `python -m venv .venv` - create virtual environment.

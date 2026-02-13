@@ -1,6 +1,12 @@
 # GitHub Guide (Practical + Explained)
 Use this when you are new to git. Every workflow step includes what the command and flags actually do.
 
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
+
 ## 1) One-time setup
 ```bash
 git config --global user.name "Your Name"
@@ -181,3 +187,17 @@ gh pr checks <number>
 Option breakdown:
 - `--title`: issue title.
 - `--body`: issue description.
+
+## 10) Open in editor (`code` / `code-insiders`)
+```bash
+code .
+```
+What this does:
+- Opens the current repo in VS Code from terminal.
+
+If your machine only has `code` but you want `code-insiders` command name:
+```bash
+echo \"alias code-insiders='code'\" >> ~/.zshrc
+source ~/.zshrc
+code-insiders .
+```

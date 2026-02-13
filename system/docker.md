@@ -1,5 +1,11 @@
 # Docker - container engine and image runtime
-# Use it to package apps as immutable images and run them consistently.
+Use it to package apps as immutable images and run them consistently.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Build-run-debug loop
 - `docker build -t app:dev .` - build image from `Dockerfile`.

@@ -1,5 +1,11 @@
 # head / tail - view beginning or end of files
-# Use them for quick sampling and live log monitoring.
+Use them for quick sampling and live log monitoring.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Daily use
 - `head -n 30 file` - first lines.

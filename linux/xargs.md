@@ -1,5 +1,11 @@
 # xargs - build command arguments from stdin
-# Use it to feed large input lists into commands efficiently.
+Use it to feed large input lists into commands efficiently.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Core patterns
 - `printf '%s\n' a b c | xargs -n1 echo` - one argument per command call.

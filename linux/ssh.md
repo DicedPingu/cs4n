@@ -1,5 +1,11 @@
 # ssh - secure remote shell and tunneling
-# Use it for server access, GitHub auth keys, and secure connections across devices.
+Use it for server access, GitHub auth keys, and secure connections across devices.
+
+## Read This Command Syntax
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short flag; `--long` is the long form of an option.
+- Run the safest/dry-run example first when available, then the destructive version.
 
 ## Core connection patterns
 - `ssh user@host` - connect with default key/agent.

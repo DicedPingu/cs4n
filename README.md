@@ -15,6 +15,17 @@ Practical command guides with ordered workflows, safe defaults, and upgrade-awar
 - `system/` - containers and compose orchestration.
 - `linux/` - daily Linux command references.
 - `codex/` - how to control Codex behavior and outputs.
+- Folder indexes: `build/README.md`, `cli/README.md`, `dev/README.md`, `linux/README.md`, `pkg/README.md`, `system/README.md`.
+
+## Command syntax legend
+- `<value>` means replace with your real value.
+- `[value]` means optional input.
+- `-x` is a short option; `--long` is the long form.
+- Always run preview/dry-run variants first when provided.
+
+## Code Insiders note
+- Open repo in editor from terminal with `code .`.
+- If you prefer the name `code-insiders`, add: `alias code-insiders='code'`.
 
 ## How these files are structured
 - Header: one-line purpose + when to use it.
