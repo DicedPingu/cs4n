@@ -1,6 +1,11 @@
 # Guides
 Practical command guides with ordered workflows, safe defaults, and upgrade-aware notes.
 
+## Start Here (if you're green)
+- New to git? Read `cli/github.md` first.
+- Follow sections in order: `1) One-time setup` -> `2) Get a repo` -> `3) Daily workflow`.
+- Keep this rule: pull before coding, push after each finished chunk.
+
 ## Layout
 - `cli/` - GitHub workflow (`git` + `gh`) including Pop!_OS/Android/AI patterns, plus terminal productivity tooling.
 - `cli/github.md` - canonical Git + GitHub CLI workflow.
