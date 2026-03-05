@@ -1,38 +1,43 @@
-# Guides
-Practical command guides with ordered workflows, safe defaults, and upgrade-aware notes.
+# cs4n Command Guides
+A heavily expanded command cheats repo with practical workflows, safer defaults, and fast copy/paste snippets.
 
-## Start Here (if you're green)
-- New to git? Read `cli/github.md` first.
-- Follow sections in order: `1) One-time setup` -> `2) Get a repo` -> `3) Daily workflow`.
-- Keep this rule: pull before coding, push after each finished chunk.
+## New folder structure
+- `guides/build/` - CMake/Make build workflows.
+- `guides/cli/` - terminal workflow (`git`, `gh`, `rg`, `tmux`, `wget`).
+- `guides/codex/` - Codex control templates and quality checklists.
+- `guides/dev/` - language/framework loops (`python`, `flutter`, `cargo`).
+- `guides/linux/` - daily Linux command cheats.
+- `guides/pkg/` - package management (`apt`, `nala`, `aptitude`, `dpkg`, `npm`, `pip`, `uv`, `dart pub`).
+- `guides/pkg/apt-family/` - per-command docs for the full `apt-*` family plus `add-apt-repository`.
+- `guides/system/` - Docker and Compose operations.
+- `guides/INDEX.md` - complete file map (all markdown files and locations).
 
-## Layout
-- `cli/` - GitHub workflow (`git` + `gh`) including Pop!_OS/Android/AI patterns, plus terminal productivity tooling.
-- `cli/github.md` - canonical Git + GitHub CLI workflow.
-- `pkg/` - package manager workflows (`npm`, `uv`, `pip`, `dart pub`).
-- `dev/` - language and framework flows (`python`, `flutter`, `cargo`).
-- `build/` - build systems (`make`, `cmake`).
-- `system/` - containers and compose orchestration.
-- `linux/` - daily Linux command references.
-- `codex/` - how to control Codex behavior and outputs.
-- Folder indexes: `build/README.md`, `cli/README.md`, `dev/README.md`, `linux/README.md`, `pkg/README.md`, `system/README.md`.
+## Start order
+1. Read `guides/INDEX.md` for the full file map.
+2. Read `guides/cli/github.md` for baseline Git/GitHub flow.
+3. Read `guides/pkg/README.md` then `guides/pkg/apt-family/README.md` for package tooling.
+4. Use specific command files when running tasks.
 
 ## Command syntax legend
 - `<value>` means replace with your real value.
 - `[value]` means optional input.
-- `-x` is a short option; `--long` is the long form.
-- Always run preview/dry-run variants first when provided.
+- `-x` is short option form and `--long` is long option form.
+- Prefer dry-run/inspect commands first, then apply commands.
 
-## Code Insiders note
-- Open repo in editor from terminal with `code .`.
-- If you prefer the name `code-insiders`, add: `alias code-insiders='code'`.
+## Expanded Cheats (2026-03)
+More command/subcommand/option examples you can run directly.
 
-## How these files are structured
-- Header: one-line purpose + when to use it.
-- Main flow first: commands in the order most people actually run them.
-- Options nearby: flags are grouped next to the workflow they affect.
-- Safer alternatives: destructive patterns are paired with dry-run checks.
-- Version awareness: each moving tool includes a local version check and upstream release pointer.
-
-## Version snapshot date
-- Release references were refreshed on `2026-02-08`.
+| Command | Use case |
+| --- | --- |
+| `tree guides -L 2` | Visualize the top-level guide structure quickly |
+| `find guides -type f -name '*.md' | sort` | List all markdown guides in sorted order |
+| `rg -n '^## ' guides` | Scan all section headings across the guides |
+| `rg -n 'apt-' guides/pkg` | Find all `apt-*` references in package docs |
+| `rg -n 'Expanded Cheats' guides` | Verify expanded cheat sections across files |
+| `ls -lah guides/pkg/apt-family` | Inspect full apt-family file set |
+| `git status --short` | Review current repo changes quickly |
+| `git diff -- guides` | Inspect content edits inside guides only |
+| `git add guides README.md` | Stage structure + docs updates |
+| `git commit -m 'Reorganize guides and massively expand cheats'` | Commit the documentation overhaul |
+| `git push origin main` | Publish changes to remote |
+| `code .` | Open repository in VS Code |
